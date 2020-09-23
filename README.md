@@ -1,6 +1,7 @@
-<img src="https://blog.4linux.com.br/wp-content/uploads/2018/01/Heroku.png" width="350" alt="Heroku" />
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png" width="350" alt="Angular" />
-
+<div>
+	<img src="https://blog.4linux.com.br/wp-content/uploads/2018/01/Heroku.png" width="250" alt="Heroku" />
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png" width="250" alt="Angular" />
+</div>
 
 # Heroku Angular Deploy
 How to do a angular project deploy in Heroku.
