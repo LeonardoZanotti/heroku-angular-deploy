@@ -1,0 +1,71 @@
+h1 {
+    color: #336699;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 3em;
+    margin: 0.5em 0em;
+}
+
+h2, h3 {
+    color: #444444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;  
+}
+
+body, input[type="text"], button {
+    color: #333333;
+    font-family: Cambria, Georgia;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav.navbar {
+    display: flex;
+    background-color: #336699;
+    width: 24em;
+    height: 3em;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #225588;
+    border-width: 2px;
+    margin: 0em 0em 2em 0em;
+    padding: 0px;
+}
+
+nav.navbar a {
+    display: inline-block;
+    position: relative;
+    color: #99CCFF;
+    text-decoration: none;
+    width: 9em;
+    height: 2em;
+    padding: 0.25em 1em 1em 1em;
+    margin: 0px 0.25em;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+nav.navbar a:hover {
+    color: #AADDFF;
+    background-color: #4477AA;
+}
+
+@media (max-width: 576px) {
+    nav.navbar {
+        margin: 1em 0em 1.5em 0em;
+        width: 12em;
+        height: 6em;
+    }
+    
+    nav.navbar a {
+        font-size: 1em;
+        margin: 0.1em;
+        padding: 0.5em;
+        width: 11.5em;
+        height: 2.5em;
+
+    }
+}

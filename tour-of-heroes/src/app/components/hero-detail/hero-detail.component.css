@@ -1,0 +1,41 @@
+.hero-detail {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 24em;
+}
+
+.hero-detail h2 span {
+    color: #DD3333;
+}
+
+.fields {
+    margin: 10px 0px;
+}
+
+.levelInput {
+    width: 3em;
+}
+
+button.goback {
+    display: block;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #EEEEEE;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;        
+    margin-top: 1em;
+}
+
+button.goback:hover {
+    background-color: #CFD8DC;
+    font-weight: 700;
+}
+
+@media (max-width: 576px) {
+    .hero-detail {
+        width: 90%;
+    }
+}

@@ -1,0 +1,34 @@
+<div *ngIf="hero" class="hero-detail">
+    <h2><span>{{ hero.name | uppercase }}</span> Details</h2>
+    
+    <mat-form-field>
+        <div class="fields">
+            <span>
+                Id: {{ hero.id }}
+            </span>
+        </div>
+        <div class="fields">
+            <label>
+                Name:
+                <!-- <input [(ngModel)]="hero.name" placeholder="Name" /> -->
+                <span>{{hero.name}}</span>
+            </label>
+        </div>
+        <div class="fields">
+            <label>
+                Level:
+                <!-- <input type="number" class="levelInput" [(ngModel)]="hero.level" placeholder="Level" /> -->
+                <span>{{hero.level}}</span>
+            </label>
+        </div>
+        <div class="fields">
+            <label>
+                Description:
+                <!-- <input [(ngModel)]="hero.description" placeholder="Description" /> -->
+                <span>{{hero.description}}</span>
+            </label>
+        </div>
+    </mat-form-field>
+</div>
+
+<button (click)="goBack()" class="goback">Go back</button>

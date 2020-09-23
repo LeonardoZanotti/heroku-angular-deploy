@@ -1,0 +1,11 @@
+<div class="messageDiv container-fluid">
+    <h2>Logs</h2>
+    
+    <button class="clear" (click)="messageService.clear()">
+        Clear
+    </button>
+
+    <div class="message" *ngFor="let message of messageService.messages">
+        {{ message }}
+    </div>
+</div>

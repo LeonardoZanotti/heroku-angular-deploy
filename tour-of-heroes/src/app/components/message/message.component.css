@@ -1,0 +1,47 @@
+.messageDiv {
+    display: block;
+    position: absolute;
+    background-color: #AAAAAA;
+    padding: 1em;
+    border-style: solid;
+    border-width: 1px;;
+    border-radius: 4px;
+    width: 24%;
+    height: auto;
+    top: 20%;
+    left: 75%;
+}
+
+.messageDiv h2 {
+    margin: 0px 0px 1em 0px;
+    width: 3em;
+    display: inline-block;
+}
+
+.messageDiv .clear {
+    display: block;
+    float: right;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #EEEEEE;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.messageDiv button:hover {
+    background-color: #CFD8DC;
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .messageDiv {
+        left: 0%;
+        top: 0%;
+        position: relative;
+        margin: 2em 0em 0em 0em;
+        max-width: 25em;
+        width: 100%;
+        height: auto;
+    }
+}
