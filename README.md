@@ -7,14 +7,13 @@
 How to do a angular project deploy in Heroku.
 
 # Requirements
-First of all, is necessary to have an angular project in the Github. The project can be unfinished, just put our project **in the root of the repository**. Im using my [Tour of Heroes project](https://github.com/LeonardoZanotti/Tour-of-Heroes) in this guide, he is uploaded in the root of this repo.
+First of all, is necessary to have an angular project in the Github. The project can be unfinished, just put your project **in the root of the repository**. Im using my [Tour of Heroes project](https://github.com/LeonardoZanotti/Tour-of-Heroes) in this guide, he is uploaded in the root of this repo.
 
 About the dependences, im using the following, but you can use the versions you use in your project:
 * [Git](https://git-scm.com/downloads)
 * [Angular 10.0.11](https://angular.io/guide/setup-local)
 * [Node 13.14.0 and Npm 6.14.4](https://nodejs.org/en/)
 * [A Heroku account](https://signup.heroku.com/)
-* [And Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 # Deploy
 With the project, lets configure this to do the deploy. First of all, configure the dependences on the `package.json` file, copy `@angular/cli`, `@angular/compiler-cli`, `@angular-devkit/build-angular` and `typescript` from **devDependencies** to **dependencies**. Now, lets set the node and npm versions, copy and paste this on the end of the package.json with the versions of your node/npm (you can use `node -v` and `npm -v` to discover the versions):
@@ -45,12 +44,12 @@ As example, my final package.json file looks like this:
   "dependencies": {
     "@angular/animations": "~10.0.9",
     "@angular/cdk": "^10.1.3",
-    "@angular/cli": "~10.0.6",          # copied of devDependences
+    "@angular/cli": "~10.0.6",          # copied from devDependences
     "@angular/common": "~10.0.9",
     "@angular/compiler": "~10.0.9",
-    "@angular/compiler-cli": "~10.0.9",     # copied of devDependences
+    "@angular/compiler-cli": "~10.0.9",     # copied from devDependences
     "@angular/core": "~10.0.9",
-    "@angular-devkit/build-angular": "~0.1000.6",       # copied of devDependences
+    "@angular-devkit/build-angular": "~0.1000.6",       # copied from devDependences
     "@angular/forms": "~10.0.9",
     "@angular/platform-browser": "~10.0.9",
     "@angular/platform-browser-dynamic": "~10.0.9",
@@ -59,7 +58,7 @@ As example, my final package.json file looks like this:
     "path": "^0.12.7",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "typescript": "~3.9.5",         # copied of devDependences
+    "typescript": "~3.9.5",         # copied from devDependences
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
@@ -96,7 +95,7 @@ Now, lets install Express to be our server.
 npm install express path --save
 ```
 
-Create a `server.js` file on the root of your project and copy the following inside the file (replace "NAME_OF_THE_PROJECT" with the name of your project):
+Create a `server.js` file in the root of your frontend project and copy the following inside the file (replace "NAME_OF_THE_PROJECT" with the name of your project):
 ```bash
 const express = require('express');
 const path = require('path');
@@ -115,14 +114,15 @@ app.listen(process.env.PORT || 8080);
 ```
 
 Add all this changes to your Github repository and go to Heroku to do the deploy.
-**If you have a .gitignore file, reminder to remove /dist from it**
+
+**If you have a .gitignore file, reminder to remove `/dist` from it**
 
 # Heroku config
 <img src="https://backefront.com.br/posts/heroku_integracao_github.png" alt="Heroku deploy">
 
-In Heroku, click on "New", then type a name for your project and search him on Github. Then add the Automatic deploy and do the deploy.
+In Heroku, click in "New", then type a name for your project and search him on Github. Then add the Automatic deploy and do the deploy.
 
 ## References
-Thanks [SonaliPatel](https://www.geeksforgeeks.org/how-to-bundle-an-angular-app-for-production/) and [Victor Jordan](https://backefront.com.br/configurando-projeto-angular-heroku/) for this articles, this helped a lot.
+Thanks [SonaliPatel](https://www.geeksforgeeks.org/how-to-bundle-an-angular-app-for-production/) and [Victor Jordan](https://backefront.com.br/configurando-projeto-angular-heroku/) for this articles, helped a lot.
 
 ## LeonardoZanotti
