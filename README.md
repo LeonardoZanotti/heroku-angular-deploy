@@ -24,7 +24,7 @@ With the project, lets configure this to do the deploy. First of all, configure 
     "npm": "6.14.4"
   }
 ```
-OK, yet in package.json, lets change the scripts. Change the start to `"start": "node server.js"` and add `"heroku-postbuild": "ng build --prod"`.
+OK, yet in package.json, lets change the scripts. Change the start to `"start": "node server.js"` and add `"heroku-postbuild": "ng build --prod"`. If you have a `postinstall` script, remove it.
 
 As example, my final package.json file looks like this:
 ```bash
@@ -115,7 +115,7 @@ app.listen(process.env.PORT || 8080);
 
 Add all this changes to your Github repository and go to Heroku to do the deploy.
 
-**If you have a .gitignore file, reminder to remove `/dist` from it**
+**If you have a .gitignore file, reminder to remove `/dist` and environment files from it**
 
 # Heroku config
 <img src="https://backefront.com.br/posts/heroku_integracao_github.png" alt="Heroku deploy">
@@ -123,6 +123,6 @@ Add all this changes to your Github repository and go to Heroku to do the deploy
 In Heroku, click in "New", then type a name for your project and search him on Github. Then add the Automatic deploy and do the deploy.
 
 ## References
-Thanks [SonaliPatel](https://www.geeksforgeeks.org/how-to-bundle-an-angular-app-for-production/) and [Victor Jordan](https://backefront.com.br/configurando-projeto-angular-heroku/) for this articles, helped a lot.
+Thanks [SonaliPatel](https://www.geeksforgeeks.org/how-to-bundle-an-angular-app-for-production/) and [Victor Jordan](https://backefront.com.br/configurando-projeto-angular-heroku/) for his articles, helped a lot.
 
 ## LeonardoZanotti
