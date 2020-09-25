@@ -5,10 +5,10 @@ const path = require('path');
 const app = express();
 
 // Serve os arquivos estáticos da pasta dist (gerada pelo ng build)
-app.use(express.static(__dirname + '/dist/heroku-angular-deploy'));
+app.use(express.static(__dirname + '/dist/tour-of-heroes'));
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname+'/dist/heroku-angular-deploy/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/tour-of-heroes/index.html'));
 });
 
 // Inicia a aplicação pela porta configurada
