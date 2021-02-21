@@ -16,6 +16,8 @@ About the dependences, im using the following, but you can use the versions you 
 * [A Heroku account](https://signup.heroku.com/)
 
 # Deploy
+**Its needed to have a git project (git init) and a heroku project (heroku create your-app)**
+
 With the project, lets configure this to do the deploy. First of all, configure the dependences on the `package.json` file, copy `@angular/cli`, `@angular/compiler-cli`, `@angular-devkit/build-angular` and `typescript` from **devDependencies** to **dependencies**. Now, lets set the node and npm versions, copy and paste this on the end of the package.json with the versions of your node/npm (you can use `node -v` and `npm -v` to discover the versions):
 ```bash
 # How i said, im using this versions for node and npm, but you put yours
@@ -88,8 +90,6 @@ As example, my final package.json file looks like this:
 }
 ```
 
-Fine, now lets put our project in production mode with `ng build --output-path production --aot --prod`. After this, a `production` folder should appear in the root and you can check with `npm start` the project running in production mode.
-
 Now, lets install Express to be our server.
 ```bash
 npm install express path --save
@@ -110,7 +110,11 @@ app.get('/*', function(req, res) {
 
 app.listen(process.env.PORT || 8080);
 ```
-You should add the `/production` folder to you .gitignore file too.
+
+Fine, now lets see if production is working with `ng build --output-path production --aot --prod`. After this, a `production` folder should appear in the root and you can check with `npm start` the project running in production mode.
+
+You should add the `/production` folder to you .gitignore file.
+
 Add all this changes to your Github repository and go to Heroku to do the deploy.
 
 # Heroku config
@@ -118,7 +122,7 @@ To deploy to heroku, just do:
 ```
 $ git add .
 $ git commit -m "frontend to heroku"
-$ git push heroku master    # or git push heroku your-branch:master
+$ git push heroku master     ## or git push heroku your-branch:master
 ```
 
 Or, use your git repository:
