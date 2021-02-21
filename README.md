@@ -115,6 +115,8 @@ Fine, now lets see if production is working with `ng build --output-path product
 
 You should add the `/production` folder to you .gitignore file.
 
+Maybe, on the `git push heroku master` you will have a problem with the `import { env } from './.env`. To solve this. delete the `src/environments/.env.ts` file and fix the `environment.prod.ts` and `environment.ts` files to dont depend from the `.env.ts` file.
+
 Add all this changes to your Github repository and go to Heroku to do the deploy.
 
 # Heroku config
