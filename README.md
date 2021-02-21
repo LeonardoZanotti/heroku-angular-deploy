@@ -24,7 +24,7 @@ With the project, lets configure this to do the deploy. First of all, configure 
     "npm": "6.14.4"
   }
 ```
-OK, yet in package.json, lets change the scripts. Change the start to `"start": "node server.js"` and add `"heroku-postbuild": "ng build --prod"`. If you have a `postinstall` script, remove it.
+OK, yet in package.json, lets change the scripts. Change the start to `"start": "node server.js"` and add `"heroku-postbuild": "ng build --output-path production --aot --prod"`.
 
 As example, my final package.json file looks like this:
 ```bash
@@ -38,7 +38,7 @@ As example, my final package.json file looks like this:
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"   # heroku script
+    "heroku-postbuild": "ng build --output-path production --aot --prod"   # heroku script
   },
   "private": true,
   "dependencies": {
@@ -88,36 +88,41 @@ As example, my final package.json file looks like this:
 }
 ```
 
-Fine, now lets put our project in production mode with `ng build --prod`. After this, a `dist` folder should appear in the root and you can check with `ng serve --prod` the project running in production mode.
+Fine, now lets put our project in production mode with `ng build --output-path production --aot --prod`. After this, a `production` folder should appear in the root and you can check with `npm start` the project running in production mode.
 
 Now, lets install Express to be our server.
 ```bash
 npm install express path --save
 ```
 
-Create a `server.js` file in the root of your frontend project and copy the following inside the file (replace "NAME_OF_THE_PROJECT" with the name of your project):
+Create a `server.js` file in the root of your frontend project and copy the following inside the file:
 ```bash
 const express = require('express');
 const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname + '/dist/NAME_OF_THE_PROJECT'));
+app.use(express.static(__dirname + '/production'));
 
-app.get('/*', function(req,res) {
-
-
-res.sendFile(path.join(__dirname+'/dist/NAME_OF_THE_PROJECT/index.html'));
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/production/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
 ```
-
+You should add the `/production` folder to you .gitignore file too.
 Add all this changes to your Github repository and go to Heroku to do the deploy.
 
-**If you have a .gitignore file, reminder to remove `/dist` and environment files from it**
-
 # Heroku config
+To deploy to heroku, just do:
+```
+$ git add .
+$ git commit -m "frontend to heroku"
+$ git push heroku master    # or git push heroku your-branch:master
+```
+
+Or, use your git repository:
+
 <img src="https://backefront.com.br/posts/heroku_integracao_github.png" alt="Heroku deploy">
 
 In Heroku, click in "New", then type a name for your project and search him on Github. Then add the Automatic deploy and do the deploy.
